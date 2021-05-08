@@ -35,7 +35,7 @@ namespace PrintDebugLogs.Class
                                                     LineNumber,
                                                     CallerMemberName,
                                                     CalledFilePath,
-                                                    IsPrintStackTrace ? "[StackTrace]:  " + Environment.StackTrace : "");
+                                                    IsPrintStackTrace ? string.Format("[StackTrace]: {0}", Environment.StackTrace) : string.Empty);
 
                 Console.WriteLine(MessageToBePrinted);
                 System.IO.File.AppendAllText(@"C:\\DebugCode.log", MessageToBePrinted);
