@@ -9,67 +9,39 @@
 //  </summary>
 //  -------------------------------------------------------------------------
 
-using PrintDebugLogs.Interface;
-
 namespace PrintDebugLogs.Class
 {
-    using System;
-    using System.Runtime.CompilerServices;
+    using PrintDebugLogs.Interface;
     public class Startup : IStartup
     {
+        private readonly Helper helper = null;
+        public Startup()
+        {
+            if(helper == null) helper = new Helper();
+        }
+
         public void Initiate()
         {
             SomeMethodSomewhere();
         }
 
-        static void SomeMethodSomewhere()
+        private void SomeMethodSomewhere()
         {
-            PrintDebugLogs("A PORTRAIT OF THE ARTIST AS A YOUNG MAN");
-            PrintDebugLogs("THE SOUND AND THE FURY");
-            PrintDebugLogs("DARKNESS AT NOON");
-            PrintDebugLogs("THE HEART IS A LONELY HUNTER");
+            helper.PrintDebugLogs("A PORTRAIT OF THE ARTIST AS A YOUNG MAN");
+            helper.PrintDebugLogs("THE SOUND AND THE FURY");
+            helper.PrintDebugLogs("DARKNESS AT NOON");
+            helper.PrintDebugLogs("THE HEART IS A LONELY HUNTER");
 
             AgainSomeMethodSomewhere();
         }
 
-        static void AgainSomeMethodSomewhere()
+        private void AgainSomeMethodSomewhere()
         {
-            PrintDebugLogs("THE WINGS OF THE DOVE", IsPrintStackTrace: true);
-            PrintDebugLogs("A DANCE TO THE MUSIC OF TIME", IsPrintStackTrace: true);
-            PrintDebugLogs("THE RAINBOW", IsPrintStackTrace: true);
-            PrintDebugLogs("THE DEATH OF THE HEART", IsPrintStackTrace: true);
+            helper.PrintDebugLogs("THE WINGS OF THE DOVE", IsPrintStackTrace: true);
+            helper.PrintDebugLogs("A DANCE TO THE MUSIC OF TIME", IsPrintStackTrace: true);
+            helper.PrintDebugLogs("THE RAINBOW", IsPrintStackTrace: true);
+            helper.PrintDebugLogs("THE DEATH OF THE HEART", IsPrintStackTrace: true);
         }
-
-        static void PrintDebugLogs(
-            string Message,
-            [CallerLineNumber] int LineNumber = 0,
-            [CallerMemberName] string CallerMemberName = null,
-            [CallerFilePath] string CalledFilePath = null,
-            bool IsPrintStackTrace = false)
-        {
-            try
-            {
-                string MessageToBePrinted = string.Empty;
-                string Star = string.Format("{0}******************************************************************************************************{0}", System.Environment.NewLine);
-
-                MessageToBePrinted = string.Format("{1} [TimeStamp]: {2}{0} [Message]: {3},{0} [At Line Number]: {4},{0} [CallerMemberName]: {5},{0} [CalledFilePath]: {6},{0} {7}",
-                                                    Environment.NewLine,
-                                                    Star,
-                                                    DateTime.Now.ToString(),
-                                                    Message,
-                                                    LineNumber,
-                                                    CallerMemberName,
-                                                    CalledFilePath,
-                                                    IsPrintStackTrace ? "[StackTrace]:  " + Environment.StackTrace : "");
-
-                Console.WriteLine(MessageToBePrinted);
-                System.IO.File.AppendAllText(@"C:\\DebugCode.log", MessageToBePrinted);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-        }
+        
     }
 }

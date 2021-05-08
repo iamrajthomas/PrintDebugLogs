@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Helper.cs" />
     <Compile Include="Class\Startup.cs" />
+    <Compile Include="Interface\IHelper.cs" />
     <Compile Include="Interface\IStartup.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
