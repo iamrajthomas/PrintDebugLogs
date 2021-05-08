@@ -1,0 +1,6 @@
+C:\Users\c-rajesh.thomas\source\repos\PrintDebugLogs\PrintDebugLogs\bin\Debug\PrintDebugLogs.exe.config
+C:\Users\c-rajesh.thomas\source\repos\PrintDebugLogs\PrintDebugLogs\bin\Debug\PrintDebugLogs.exe
+C:\Users\c-rajesh.thomas\source\repos\PrintDebugLogs\PrintDebugLogs\bin\Debug\PrintDebugLogs.pdb
+C:\Users\c-rajesh.thomas\source\repos\PrintDebugLogs\PrintDebugLogs\obj\Debug\PrintDebugLogs.csproj.CoreCompileInputs.cache
+C:\Users\c-rajesh.thomas\source\repos\PrintDebugLogs\PrintDebugLogs\obj\Debug\PrintDebugLogs.exe
+C:\Users\c-rajesh.thomas\source\repos\PrintDebugLogs\PrintDebugLogs\obj\Debug\PrintDebugLogs.pdb
