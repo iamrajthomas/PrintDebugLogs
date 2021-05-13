@@ -30,7 +30,7 @@ namespace PrintDebugLogs.Class
                                                     Environment.NewLine,
                                                     Star,
                                                     DateTime.Now.ToString(),
-                                                    Message ?? "<<< The Pssed Value As Message Is Null >>>",
+                                                    Message ?? "<<< The Passed Value As Message Is Null >>>",
                                                     LineNumber,
                                                     CallerMemberName,
                                                     CalledFilePath,
