@@ -8,17 +8,15 @@
 //  </summary>
 //  -------------------------------------------------------------------------
 
-using System.Runtime.CompilerServices;
-
 namespace PrintDebugLogs.Interface
 {
     public interface IHelper
     {
         void PrintDebugLogs(
             string Message,
-            [CallerLineNumber] int LineNumber = 0,
-            [CallerMemberName] string CallerMemberName = null,
-            [CallerFilePath] string CalledFilePath = null,
+            [System.Runtime.CompilerServices.CallerLineNumber] int LineNumber = 0,
+            [System.Runtime.CompilerServices.CallerMemberName] string CallerMemberName = null,
+            [System.Runtime.CompilerServices.CallerFilePath] string CalledFilePath = null,
             bool IsPrintStackTrace = false);
     }
 }
